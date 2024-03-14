@@ -10,18 +10,21 @@ import BgSafety from '@/public/bg-safety.jpeg'
 import Lenis from "@studio-freight/lenis";
 
 const page = () => {
-    useEffect(() => {
-      const lenis = new Lenis();
-      function raf(time: any) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      }
+  useEffect(() => {
+    const lenis = new Lenis();
+    function raf(time: any) {
+      lenis.raf(time);
       requestAnimationFrame(raf);
-    }, []);
-  
+    }
+    const animationId = requestAnimationFrame(raf);
+    return () => {
+      cancelAnimationFrame(animationId);
+    };
+  }, []);
+
 
   return (
-   
+
     <div>
       <HeroSection />
       <Section

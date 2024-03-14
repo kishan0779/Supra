@@ -1,6 +1,5 @@
 'use client'
 import { MotionConfig, useScroll, useTransform } from 'framer-motion';
-import { MotionValue } from 'framer-motion/dom';
 import Image, { StaticImageData } from 'next/image'
 import React, { useRef } from 'react'
 import { motion } from 'framer-motion';
