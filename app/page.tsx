@@ -9,24 +9,17 @@ import BgConnectivity from '@/public/bg-connectivity.jpeg'
 import BgSafety from '@/public/bg-safety.jpeg'
 import Lenis from "@studio-freight/lenis";
 
-const Page: React.FC = () => {
-
+const page = () => {
   useEffect(() => {
     const lenis = new Lenis();
     function raf(time: any) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
-    const animationId = requestAnimationFrame(raf);
-  
-      cancelAnimationFrame(animationId);
-      console.log('useEffect called');
+    requestAnimationFrame(raf);
 
   }, []);
-
-
   return (
-
     <div>
       <HeroSection />
       <Section
