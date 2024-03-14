@@ -9,7 +9,8 @@ import BgConnectivity from '@/public/bg-connectivity.jpeg'
 import BgSafety from '@/public/bg-safety.jpeg'
 import Lenis from "@studio-freight/lenis";
 
-const page = () => {
+const Page: React.FC = () => {
+
   useEffect(() => {
     const lenis = new Lenis();
     function raf(time: any) {
@@ -17,9 +18,10 @@ const page = () => {
       requestAnimationFrame(raf);
     }
     const animationId = requestAnimationFrame(raf);
-    return () => {
+  
       cancelAnimationFrame(animationId);
-    };
+      console.log('useEffect called');
+
   }, []);
 
 
